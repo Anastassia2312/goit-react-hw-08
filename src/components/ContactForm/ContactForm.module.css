@@ -1,0 +1,33 @@
+.error {
+  color: rgb(161, 21, 21);
+}
+
+.input {
+  width: 320px;
+  border: 2px solid rgb(139, 110, 72);
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
+.button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  outline: transparent;
+  background-color: rgb(139, 110, 72);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+  height: 40px;
+  padding: 12px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}

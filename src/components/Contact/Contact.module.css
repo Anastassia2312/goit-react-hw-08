@@ -1,0 +1,31 @@
+ul {
+  list-style-type: none;
+}
+.box {
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid rgb(139, 110, 72);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.string {
+  display: flex;
+  gap: 8px;
+}
+
+.button {
+  outline: transparent;
+  background-color: rgb(139, 110, 72);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+  width: 60px;
+  height: 40px;
+}
