@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { fetchContacts } from "../redux/contacts/operations";
 import Loading from "./Loading/Loading";
 import ErrorMessage from "./ErrorMessage/ErrorMessage";
+import Navigation from "./Navigation/Navigation";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div>
+      <Navigation />
       <h1 className={css.header}>Phonebook</h1>
       {loading && <Loading />}
       {error && <ErrorMessage />}
