@@ -1,0 +1,13 @@
+.box {
+  background-color: rgb(213, 169, 169);
+  width: 600px;
+  height: 600px;
+  padding: 20px;
+}
+
+.input {
+  color: white;
+}
+.input :focus {
+  border-color: white;
+}

@@ -4,7 +4,6 @@ import css from "./ContactForm.module.css";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
-
 const validationSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Too short!")
@@ -15,6 +14,7 @@ const validationSchema = Yup.object().shape({
     .max(50, "Too long!")
     .required("Required"),
 });
+
 export default function ContactForm() {
   const usernameId = useId();
   const numberId = useId();
@@ -61,9 +61,7 @@ export default function ContactForm() {
           />
           <ErrorMessage className={css.error} name="number" component="span" />
         </div>
-        <button className={css.button} type="submit">
-          Add contact
-        </button>
+        <button className={css.button}>Add contact</button>
       </Form>
     </Formik>
   );

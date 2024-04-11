@@ -10,19 +10,11 @@
 }
 
 .button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  color: black;
+  justify-content: center;
   margin-top: 8px;
   margin-bottom: 12px;
-  outline: transparent;
-  background-color: rgb(139, 110, 72);
-  border: none;
-  border-radius: 12px;
-  color: white;
-  font-weight: 500;
-  height: 40px;
-  padding: 12px;
 }
 
 .wrapper {
