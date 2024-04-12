@@ -1,10 +1,15 @@
+.nav {
+  display: flex;
+  gap: 40px;
+}
+
 .link {
-  color: white;
+  color: #e1bee7;
   font-size: 24px;
   font-weight: 500;
   text-decoration: none;
 }
 
 .active {
-  color: #700b97;
+  color: #ba68c8;
 }

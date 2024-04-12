@@ -10,7 +10,7 @@ export default function Navigation() {
     return clsx(css.link, isActive && css.active);
   };
   return (
-    <nav>
+    <nav className={css.nav}>
       <NavLink className={buildLinkClass} to="/">
         Home
       </NavLink>

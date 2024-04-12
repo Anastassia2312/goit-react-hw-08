@@ -40,13 +40,23 @@ export default function RegistrationForm() {
   });
   return (
     <Container maxWidth="sm">
-      <Box className={css.box}>
+      <Box
+        className={css.box}
+        display="flex"
+        sx={{
+          gap: "16px",
+        }}
+      >
         <form onSubmit={formik.handleSubmit}>
           <TextField
+            fullWidth
             className={css.input}
+            sx={{
+              marginBottom: "16px",
+            }}
             variant="outlined"
-            color="secondary"
             required
+            color="secondary"
             id="name"
             name="name"
             label="Name"
@@ -57,10 +67,14 @@ export default function RegistrationForm() {
             helperText={formik.touched.name && formik.errors.name}
           />
           <TextField
+            fullWidth
             required
             className={css.input}
             variant="outlined"
             id="email"
+            sx={{
+              marginBottom: "16px",
+            }}
             name="email"
             label="Email"
             type="email"
@@ -71,10 +85,14 @@ export default function RegistrationForm() {
             helperText={formik.touched.email && formik.errors.email}
           />
           <TextField
+            fullWidth
             required
             className={css.input}
             variant="outlined"
             id="password"
+            sx={{
+              marginBottom: "16px",
+            }}
             name="password"
             label="Password"
             type="password"

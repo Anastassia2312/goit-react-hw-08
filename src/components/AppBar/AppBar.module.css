@@ -1,8 +1,11 @@
 .appBar {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: space-between;
 }
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
