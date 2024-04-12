@@ -1,31 +1,112 @@
-import { Formik, Form, Field } from "formik";
+import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import css from "./RegistrationForm.module.css";
-import { FormControl } from "@mui/material";
 import { Button, TextField } from "@mui/material";
+import * as Yup from "yup";
+
+const validationSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, "Too short!")
+    .max(50, "Too long!")
+    .required("Required"),
+  email: Yup.string()
+    .min(3, "Too short!")
+    .max(50, "Too long!")
+    .email("Must be a valid email")
+    .required("Required"),
+  password: Yup.string()
+    .min(4, "Too short!")
+    .max(50, "Too long!")
+    .required("Required"),
+});
 
 export default function RegistrationForm() {
   const dispatch = useDispatch();
-  const handleSubmit = (values, actions) => {
-    dispatch(register(values));
-    actions.resetForm();
-  };
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values, actions) => {
+      dispatch(register(values));
+      actions.resetForm();
+    },
+  });
   return (
     <Container maxWidth="sm">
       <Box className={css.box}>
-        <Formik
-          initialValues={{
-            name: "",
-            email: "",
-            password: "",
-          }}
-          onSubmit={handleSubmit}
-        >
-          <Form autoComplete="off">
-            <TextField required id="name-label" label="Name">
+        <form onSubmit={formik.handleSubmit}>
+          <TextField
+            className={css.input}
+            variant="outlined"
+            color="secondary"
+            required
+            id="name"
+            name="name"
+            label="Name"
+            type="text"
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            error={formik.touched.name && Boolean(formik.errors.name)}
+            helperText={formik.touched.name && formik.errors.name}
+          />
+          <TextField
+            required
+            className={css.input}
+            variant="outlined"
+            id="email"
+            name="email"
+            label="Email"
+            type="email"
+            color="secondary"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+          />
+          <TextField
+            required
+            className={css.input}
+            variant="outlined"
+            id="password"
+            name="password"
+            label="Password"
+            type="password"
+            color="secondary"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            error={formik.touched.password && Boolean(formik.errors.password)}
+            helperText={formik.touched.password && formik.errors.password}
+          />
+
+          <Button variant="contained" color="primary" type="submit">
+            Register
+          </Button>
+        </form>
+      </Box>
+    </Container>
+  );
+}
+
+/*<TextField
+   fullWidth
+   id="email"
+   name="email"
+   label="Email"
+   value={formik.values.email}
+   onChange={formik.handleChange}
+   onBlur={formik.handleBlur}
+   error={formik.touched.email && Boolean(formik.errors.email)}
+   helperText={formik.touched.email && formik.errors.email}
+ />;*/
+
+/*<TextField required id="name-label" label="Name">
               <Field type="text" name="name" as={TextField} />
             </TextField>
             <TextField required id="email-label" label="Email">
@@ -38,11 +119,4 @@ export default function RegistrationForm() {
               type="password"
             >
               <Field type="password" name="password" as={TextField} />
-            </TextField>
-            <button type="submit">Register</button>
-          </Form>
-        </Formik>
-      </Box>
-    </Container>
-  );
-}
+            </TextField>*/
