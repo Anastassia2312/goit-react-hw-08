@@ -10,6 +10,10 @@
   text-decoration: none;
 }
 
+.link :hover {
+  color: #ffffff;
+}
+
 .active {
   color: #ba68c8;
 }

@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import { login } from "../../redux/auth/operations";
 import * as Yup from "yup";
-import Container from "@mui/material/Container";
 import Box from "@mui/system/Box";
 import { Button, TextField } from "@mui/material";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
@@ -34,46 +33,44 @@ export default function LoginForm() {
   });
 
   return (
-    <Container maxWidth="sm">
-      <Box className={css.box} display="flex">
-        <LockOpenOutlinedIcon />
-        <form onSubmit={formik.handleSubmit} autoComplete="off">
-          <TextField
-            fullWidth
-            required
-            variant="outlined"
-            id="email"
-            sx={{
-              marginBottom: "16px",
-            }}
-            name="email"
-            label="Email"
-            type="email"
-            color="secondary"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-          />
-          <TextField
-            fullWidth
-            required
-            variant="outlined"
-            id="password"
-            sx={{
-              marginBottom: "16px",
-            }}
-            name="password"
-            label="Password"
-            type="password"
-            color="secondary"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-          />
-          <Button variant="outlined" type="submit">
-            Log In
-          </Button>
-        </form>
-      </Box>
-    </Container>
+    <Box className={css.box} display="flex">
+      <LockOpenOutlinedIcon />
+      <form onSubmit={formik.handleSubmit} autoComplete="off">
+        <TextField
+          fullWidth
+          required
+          variant="outlined"
+          id="email"
+          sx={{
+            marginBottom: "16px",
+          }}
+          name="email"
+          label="Email"
+          type="email"
+          color="secondary"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+        />
+        <TextField
+          fullWidth
+          required
+          variant="outlined"
+          id="password"
+          sx={{
+            marginBottom: "16px",
+          }}
+          name="password"
+          label="Password"
+          type="password"
+          color="secondary"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+        />
+        <Button variant="outlined" type="submit">
+          Log In
+        </Button>
+      </form>
+    </Box>
   );
 }
 

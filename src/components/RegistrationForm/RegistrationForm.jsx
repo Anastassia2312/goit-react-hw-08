@@ -1,7 +1,6 @@
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
-import Container from "@mui/material/Container";
 import Box from "@mui/system/Box";
 import css from "./RegistrationForm.module.css";
 import { Button, TextField } from "@mui/material";
@@ -41,64 +40,62 @@ export default function RegistrationForm() {
     },
   });
   return (
-    <Container maxWidth="sm">
-      <Box className={css.box} display="flex">
-        <HowToRegOutlinedIcon />
-        <form onSubmit={formik.handleSubmit}>
-          <TextField
-            fullWidth
-            sx={{
-              marginBottom: "16px",
-            }}
-            variant="outlined"
-            required
-            color="secondary"
-            id="name"
-            name="name"
-            label="Name"
-            type="text"
-            value={formik.values.name}
-            onChange={formik.handleChange}
-          />
-          <TextField
-            fullWidth
-            required
-            variant="outlined"
-            id="email"
-            sx={{
-              marginBottom: "16px",
-            }}
-            name="email"
-            label="Email"
-            type="email"
-            color="secondary"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-          />
-          <TextField
-            fullWidth
-            required
-            variant="outlined"
-            id="password"
-            sx={{
-              marginBottom: "16px",
-            }}
-            name="password"
-            label="Password"
-            type="password"
-            color="secondary"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            error={formik.touched.password && Boolean(formik.errors.password)}
-            helperText={formik.touched.password && formik.errors.password}
-          />
+    <Box className={css.className}>
+      <HowToRegOutlinedIcon />
+      <form onSubmit={formik.handleSubmit}>
+        <TextField
+          fullWidth
+          sx={{
+            marginBottom: "16px",
+          }}
+          variant="outlined"
+          required
+          color="secondary"
+          id="name"
+          name="name"
+          label="Name"
+          type="text"
+          value={formik.values.name}
+          onChange={formik.handleChange}
+        />
+        <TextField
+          fullWidth
+          required
+          variant="outlined"
+          id="email"
+          sx={{
+            marginBottom: "16px",
+          }}
+          name="email"
+          label="Email"
+          type="email"
+          color="secondary"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+        />
+        <TextField
+          fullWidth
+          required
+          variant="outlined"
+          id="password"
+          sx={{
+            marginBottom: "16px",
+          }}
+          name="password"
+          label="Password"
+          type="password"
+          color="secondary"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          error={formik.touched.password && Boolean(formik.errors.password)}
+          helperText={formik.touched.password && formik.errors.password}
+        />
 
-          <Button variant="contained" color="primary" type="submit">
-            Register
-          </Button>
-        </form>
-      </Box>
-    </Container>
+        <Button variant="contained" color="primary" type="submit">
+          Register
+        </Button>
+      </form>
+    </Box>
   );
 }
 
