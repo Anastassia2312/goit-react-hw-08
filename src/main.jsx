@@ -16,10 +16,10 @@ export const theme = createTheme({
       light: "#e1bee7",
     },
     text: {
-      primary: "#e1bee7",
+      primary: "#ab47bc",
     },
     secondary: {
-      main: "#e1bee7",
+      main: "#ce93d8",
     },
   },
 });

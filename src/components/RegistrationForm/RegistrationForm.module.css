@@ -1,11 +1,16 @@
 .box {
+  margin-top: 60px;
   display: flex;
+  flex-direction: column;
   width: 600px;
-  height: 400px;
   padding: 20px;
 }
 
-.input {
+.icon {
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.icon:hover {
   color: white;
-  margin: 16px;
 }

@@ -8,6 +8,9 @@
   font-weight: 500;
   text-decoration: none;
 }
+.link:hover {
+  color: #ffffff;
+}
 
 .active {
   color: #ba68c8;

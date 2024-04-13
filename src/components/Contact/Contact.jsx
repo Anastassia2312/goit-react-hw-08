@@ -3,26 +3,28 @@ import { FaPhoneAlt } from "react-icons/fa";
 import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contacts/operations";
+import { Button } from "@mui/material";
 export default function Contact({ info }) {
   const dispatch = useDispatch();
   return (
     <div className={css.box}>
       <div>
         <p className={css.string}>
-          <FaUser />
+          <FaUser className={css.icon} />
           {info.name}
         </p>
         <p className={css.string}>
-          <FaPhoneAlt />
+          <FaPhoneAlt className={css.icon} />
           {info.number}
         </p>
       </div>
-      <button
+      <Button
+        variant="contained"
         className={css.button}
         onClick={() => dispatch(deleteContact(info.id))}
       >
         Delete
-      </button>
+      </Button>
     </div>
   );
 }

@@ -40,8 +40,12 @@ export default function RegistrationForm() {
     },
   });
   return (
-    <Box className={css.className}>
-      <HowToRegOutlinedIcon />
+    <Box className={css.box}>
+      <HowToRegOutlinedIcon
+        color="primary"
+        sx={{ fontSize: 120 }}
+        className={css.icon}
+      />
       <form onSubmit={formik.handleSubmit}>
         <TextField
           fullWidth
@@ -91,7 +95,7 @@ export default function RegistrationForm() {
           helperText={formik.touched.password && formik.errors.password}
         />
 
-        <Button variant="contained" color="primary" type="submit">
+        <Button fullWidth variant="contained" color="primary" type="submit">
           Register
         </Button>
       </form>

@@ -1,25 +1,14 @@
-.error {
-  color: rgb(161, 21, 21);
-}
-
-.input {
-  width: 320px;
-  border: 2px solid rgb(139, 110, 72);
-  border-radius: 12px;
-  padding: 8px 12px;
-}
-
-.button {
-  display: flex;
-  color: black;
-  justify-content: center;
-  margin-top: 8px;
-  margin-bottom: 12px;
-}
-
-.wrapper {
+.box {
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  align-items: center;
+  width: 600px;
+  padding: 20px;
+}
+
+.text {
+  align-self: center;
+  color: #7b1fa2;
+  font-size: 32px;
+  margin-bottom: 20px;
 }

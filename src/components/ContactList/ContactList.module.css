@@ -1,7 +1,7 @@
-.list {
-  list-style-type: none;
+.box {
   display: flex;
-  gap: 12px;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  width: 700px;
+  gap: 8px;
+  flex-wrap: wrap;
 }

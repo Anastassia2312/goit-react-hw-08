@@ -1,0 +1,16 @@
+.box {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  padding: 20px;
+}
+
+.icon {
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.icon:hover {
+  color: #ffffff;
+}

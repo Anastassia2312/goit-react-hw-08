@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import Box from "@mui/system/Box";
 import { Button, TextField } from "@mui/material";
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
+import css from "./LoginForm.module.css";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -34,7 +35,11 @@ export default function LoginForm() {
 
   return (
     <Box className={css.box} display="flex">
-      <LockOpenOutlinedIcon />
+      <LockOpenOutlinedIcon
+        color="primary"
+        sx={{ fontSize: 120 }}
+        className={css.icon}
+      />
       <form onSubmit={formik.handleSubmit} autoComplete="off">
         <TextField
           fullWidth
@@ -66,29 +71,10 @@ export default function LoginForm() {
           value={formik.values.password}
           onChange={formik.handleChange}
         />
-        <Button variant="outlined" type="submit">
+        <Button fullWidth variant="outlined" type="submit">
           Log In
         </Button>
       </form>
     </Box>
   );
 }
-
-/*<TextField
-  fullWidth
-  className={css.input}
-  sx={{
-    marginBottom: "16px",
-  }}
-  variant="outlined"
-  required
-  color="secondary"
-  id="name"
-  name="name"
-  label="Name"
-  type="text"
-  value={formik.values.name}
-  onChange={formik.handleChange}
-  error={formik.touched.name && Boolean(formik.errors.name)}
-  helperText={formik.touched.name && formik.errors.name}
-/>;*/

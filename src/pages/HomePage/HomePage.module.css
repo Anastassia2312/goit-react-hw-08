@@ -1,0 +1,32 @@
+.wrapper {
+  padding-top: 80px;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../assets/fefb2f78e5b51a9e4df2d1a38109075a.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 120px;
+  background: linear-gradient(
+      90deg,
+      rgba(236, 221, 242, 0.46),
+      rgba(234, 219, 240, 0.46),
+      rgba(154, 35, 208, 0.46),
+      rgba(91, 0, 133, 0.58) 100%
+    )
+    text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text {
+  text-align: center;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.span {
+  color: #e1bee7;
+}
