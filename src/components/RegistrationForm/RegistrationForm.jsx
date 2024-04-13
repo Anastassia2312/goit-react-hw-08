@@ -2,10 +2,12 @@ import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
+import Box from "@mui/system/Box";
 import css from "./RegistrationForm.module.css";
 import { Button, TextField } from "@mui/material";
 import * as Yup from "yup";
+
+import HowToRegOutlinedIcon from "@mui/icons-material/HowToRegOutlined";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
@@ -40,17 +42,11 @@ export default function RegistrationForm() {
   });
   return (
     <Container maxWidth="sm">
-      <Box
-        className={css.box}
-        display="flex"
-        sx={{
-          gap: "16px",
-        }}
-      >
+      <Box className={css.box} display="flex">
+        <HowToRegOutlinedIcon />
         <form onSubmit={formik.handleSubmit}>
           <TextField
             fullWidth
-            className={css.input}
             sx={{
               marginBottom: "16px",
             }}
@@ -63,13 +59,10 @@ export default function RegistrationForm() {
             type="text"
             value={formik.values.name}
             onChange={formik.handleChange}
-            error={formik.touched.name && Boolean(formik.errors.name)}
-            helperText={formik.touched.name && formik.errors.name}
           />
           <TextField
             fullWidth
             required
-            className={css.input}
             variant="outlined"
             id="email"
             sx={{
@@ -81,13 +74,10 @@ export default function RegistrationForm() {
             color="secondary"
             value={formik.values.email}
             onChange={formik.handleChange}
-            error={formik.touched.email && Boolean(formik.errors.email)}
-            helperText={formik.touched.email && formik.errors.email}
           />
           <TextField
             fullWidth
             required
-            className={css.input}
             variant="outlined"
             id="password"
             sx={{

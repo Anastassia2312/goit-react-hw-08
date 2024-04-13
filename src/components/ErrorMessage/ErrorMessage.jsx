@@ -1,13 +1,9 @@
-import { useSelector } from "react-redux";
-import { selectError } from "../../redux/contacts/selectors";
+import css from "./ErrorMessage.module.css;";
 
 export default function ErrorMessage() {
-  const error = useSelector(selectError);
   return (
-    error && (
-      <div>
-        <p>Ooops! Error, please reload the page...</p>
-      </div>
-    )
+    <div>
+      <p className={css.error}>Ooops! Error, please reload the page...</p>
+    </div>
   );
 }
